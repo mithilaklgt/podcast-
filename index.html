@@ -148,3 +148,493 @@
       border: 1px solid var(--border);
       transition: all 0.2s;
     }
+    .btn-secondary:hover { border-color: var(--text-muted); background: rgba(255,255,255,0.03); }
+
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 40px;
+    }
+    .stat {
+      text-align: left;
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 2rem; font-weight: 600;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.85rem; color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 100px 24px;
+    }
+    .container {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .section-header {
+      text-align: center; margin-bottom: 64px;
+    }
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 600; letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-header p {
+      color: var(--text-muted); font-size: 1.1rem;
+      max-width: 560px; margin: 0 auto;
+    }
+
+    /* ========== ABOUT ========== */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+    .about-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem; margin-bottom: 20px;
+    }
+    .about-content p {
+      color: var(--text-muted); margin-bottom: 16px; line-height: 1.7;
+    }
+    .about-features {
+      display: grid; gap: 16px; margin-top: 32px;
+    }
+    .feature {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .feature-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--accent-soft); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.1rem;
+    }
+    .feature h4 { font-size: 1rem; margin-bottom: 4px; }
+    .feature p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+    /* ========== AGENDA ========== */
+    .agenda-tabs {
+      display: flex; gap: 8px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .agenda-tab {
+      padding: 10px 22px; border-radius: 999px;
+      background: var(--bg-elevated); border: 1px solid var(--border);
+      color: var(--text-muted); font-size: 0.9rem; font-weight: 500;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .agenda-tab.active, .agenda-tab:hover {
+      background: var(--accent); color: #0a0b0f; border-color: var(--accent);
+    }
+    .agenda-list {
+      display: grid; gap: 16px;
+    }
+    .agenda-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+      display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+      transition: border-color 0.2s;
+    }
+    .agenda-item:hover { border-color: rgba(212,160,23,0.3); }
+    .agenda-time {
+      font-weight: 600; color: var(--accent); font-size: 0.95rem;
+    }
+    .agenda-item h4 { font-size: 1.1rem; margin-bottom: 6px; }
+    .agenda-item p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+
+    /* ========== SPEAKERS ========== */
+    .speakers-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;
+    }
+    .speaker-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 24px; text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .speaker-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,0.3); }
+    .speaker-avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-soft), var(--teal-soft));
+      margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 600; color: var(--accent);
+    }
+    .speaker-card h4 { font-size: 1.1rem; margin-bottom: 4px; }
+    .speaker-card .role { color: var(--accent); font-size: 0.85rem; margin-bottom: 12px; }
+    .speaker-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; }
+
+    /* ========== TICKETS ========== */
+    .tickets-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+    }
+    .ticket-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .ticket-card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-3px); }
+    .ticket-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, rgba(212,160,23,0.08), var(--bg-card));
+    }
+    .ticket-name { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+    .ticket-price {
+      font-family: var(--font-display); font-size: 2.2rem; font-weight: 600;
+      color: var(--accent); margin-bottom: 4px;
+    }
+    .ticket-price span { font-size: 0.9rem; color: var(--text-muted); font-weight: 400; }
+    .ticket-note { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px; }
+    .ticket-benefits { list-style: none; margin-bottom: 28px; }
+    .ticket-benefits li {
+      padding: 8px 0; color: var(--text-muted); font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .ticket-benefits li::before { content: '✓'; color: var(--accent); font-weight: 600; }
+    .ticket-btn {
+      display: block; text-align: center;
+      background: var(--accent); color: #0a0b0f;
+      padding: 14px; border-radius: 999px;
+      font-weight: 600; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .ticket-btn:hover { background: #e6b422; }
+
+    /* ========== CTA ========== */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(212,160,23,0.12), rgba(13,148,136,0.08));
+      border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 20px; padding: 64px 40px; text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display); font-size: 2rem; margin-bottom: 16px;
+    }
+    .cta-banner p {
+      color: var(--text-muted); max-width: 480px; margin: 0 auto 32px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 64px 24px 32px;
+    }
+    .footer-grid {
+      max-width: 1100px; margin: 0 auto 48px;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .footer-brand p {
+      color: var(--text-muted); font-size: 0.9rem; margin-top: 16px; line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--text-muted); margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block; color: var(--text); text-decoration: none;
+      font-size: 0.9rem; margin-bottom: 10px; transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      padding-top: 24px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .hero-stats { gap: 24px; }
+      .agenda-item { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">Podcast Summary <span>Lights</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+      </ul>
+      <a href="#register" class="nav-cta">Register Interest</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Bengaluru · Coming Soon</div>
+      <h1>Podcast Summary Lights</h1>
+      <p class="hero-descriptor">International Podcast Festival &amp; Business Expo</p>
+      <p class="hero-tagline">One Platform. Global Voices. Endless Opportunities.</p>
+      <p class="hero-supporting">
+        A landmark gathering of creators, founders, investors, and media leaders — where the future of audio storytelling and podcast commerce takes center stage.
+      </p>
+      <div class="hero-actions">
+        <a href="#register" class="btn-primary">Register Your Interest</a>
+        <a href="#about" class="btn-secondary">Explore the Event</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">50+</div>
+          <div class="stat-label">Speakers &amp; Creators</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">3 Days</div>
+          <div class="stat-label">Festival + Expo</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Global</div>
+          <div class="stat-label">Voices &amp; Networks</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About the Event</h2>
+        <p>Where podcast culture meets business opportunity in the heart of India’s tech capital.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-content">
+          <h3>More than a festival</h3>
+          <p>
+            Podcast Summary Lights is designed as a dual-experience platform — a celebration of storytelling and a serious business expo for the audio economy.
+          </p>
+          <p>
+            Expect keynotes, masterclasses, live recording sessions, investor showcases, and curated networking designed for creators, startups, brands, and platforms.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">🎙</div>
+              <div>
+                <h4>Creator Stage</h4>
+                <p>Live sessions, interviews, and workshops with leading podcasters.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">💼</div>
+              <div>
+                <h4>Business Expo</h4>
+                <p>Brands, tools, platforms, and investors under one roof.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🌐</div>
+              <div>
+                <h4>Global Network</h4>
+                <p>Connect with voices and partners from across markets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <!-- visual placeholder -->
+          <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; height: 320px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+            Event Visual / Venue Preview
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section id="agenda" style="background: var(--bg-elevated);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Agenda Highlights</h2>
+        <p>A curated mix of inspiration, education, and deal-making.</p>
+      </div>
+      <div class="agenda-tabs">
+        <button class="agenda-tab active">Day 1</button>
+        <button class="agenda-tab">Day 2</button>
+        <button class="agenda-tab">Day 3</button>
+      </div>
+      <div class="agenda-list">
+        <div class="agenda-item">
+          <div class="agenda-time">09:30</div>
+          <div>
+            <h4>Opening Keynote</h4>
+            <p>The State of Podcasting in India &amp; Beyond</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">11:00</div>
+          <div>
+            <h4>Creator Masterclass</h4>
+            <p>Building a Sustainable Podcast Business</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">14:00</div>
+          <div>
+            <h4>Investor Showcase</h4>
+            <p>Pitch sessions and private meetings</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">16:30</div>
+          <div>
+            <h4>Live Recording Sessions</h4>
+            <p>Audience-participatory shows with top hosts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section id="speakers">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Speakers</h2>
+        <p>Names will be announced soon. Join the list to be the first to know.</p>
+      </div>
+      <div class="speakers-grid">
+        <div class="speaker-card">
+          <div class="speaker-avatar">A</div>
+          <h4>Speaker TBA</h4>
+          <div class="role">Creator / Host</div>
+          <p>Leading voice in the podcast ecosystem. Full profile coming soon.</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-avatar">B</div>
+          <h4>Speaker TBA</h4>
+          <div class="role">Founder</div>
+          <p>Building the next generation of audio platforms and tools.</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-avatar">C</div>
+          <h4>Speaker TBA</h4>
+          <div class="role">Investor</div>
+          <p>Backing creators and media startups across Asia.</p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-avatar">D</div>
+          <h4>Speaker TBA</h4>
+          <div class="role">Brand Leader</div>
+          <p>Driving podcast advertising and brand partnerships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKETS -->
+  <section id="tickets" style="background: var(--bg-elevated);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tickets &amp; Access</h2>
+        <p>Indicative pricing. Final tickets and benefits will be released closer to the event.</p>
+      </div>
+      <div class="tickets-grid">
+        <div class="ticket-card">
+          <div class="ticket-name">General Access</div>
+          <div class="ticket-price">₹4,999 <span>indicative</span></div>
+          <div class="ticket-note">Proposed benefit package</div>
+          <ul class="ticket-benefits">
+            <li>Full festival access</li>
+            <li>Expo floor entry</li>
+            <li>Networking sessions</li>
+          </ul>
+          <a href="#register" class="ticket-btn">Register Interest</a>
+        </div>
+        <div class="ticket-card featured">
+          <div class="ticket-name">Pro Pass</div>
+          <div class="ticket-price">₹9,999 <span>indicative</span></div>
+          <div class="ticket-note">Most popular · Proposed package</div>
+          <ul class="ticket-benefits">
+            <li>Everything in General</li>
+            <li>Priority seating</li>
+            <li>Masterclass access</li>
+            <li>Exclusive networking</li>
+          </ul>
+          <a href="#register" class="ticket-btn">Register Interest</a>
+        </div>
+        <div class="ticket-card">
+          <div class="ticket-name">VIP Pass</div>
+          <div class="ticket-price">₹14,999 <span>indicative</span></div>
+          <div class="ticket-note">Proposed benefit package</div>
+          <ul class="ticket-benefits">
+            <li>Reserved seating</li>
+            <li>VIP hospitality</li>
+            <li>Designated networking</li>
+          </ul>
+          <a href="#register" class="ticket-btn">Register Interest</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="register">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Be part of the first edition</h2>
+        <p>
+          Dates and venue will be announced soon. Register your interest to receive updates, early access, and speaker announcements.
+        </p>
+        <a href="#register" class="btn-primary">Register Your Interest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Podcast Summary <span>Lights</span></a>
+        <p>One Platform. Global Voices. Endless Opportunities. International podcast festival and business expo in Bengaluru.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#about">About the Event</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#tickets">Tickets</a>
+      </div>
+      <div class="footer-col">
+        <h4>Participate</h4>
+        <a href="#">Become a Sponsor</a>
+        <a href="#">Exhibit at the Expo</a>
+        <a href="#">Apply as a Startup</a>
+        <a href="#">Join as a Creator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Podcast Summary Lights. All rights reserved.</span>
+      <span>Draft visual identity · Fully customizable from admin</span>
+    </div>
+  </footer>
+
+  <script>
+    // Simple tab switch for agenda (demo only)
+    document.querySelectorAll('.agenda-tab').forEach((tab, i) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.agenda-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
